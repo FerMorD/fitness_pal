@@ -36,6 +36,7 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   int currentPage = 0;
+  String pageHeader = 'Home';
 
   @override
   Widget build(BuildContext context) {
@@ -45,24 +46,28 @@ class _RootPageState extends State<RootPage> {
 
       case 0:
         body = HomePage();
+        pageHeader = 'Home';
       break;
 
       case 1:
         body = LibraryPage();
+        pageHeader = 'Library';
       break; 
 
       case 2:
        // body = ProfilePage();
+       pageHeader = 'Profile';
       break;
 
       default:
         body = HomePage();
+        pageHeader = 'Error';
       break;
     }
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fitness Pal'),
+        title: Text(pageHeader),
       ),
 
       body: body,

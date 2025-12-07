@@ -12,20 +12,17 @@ class _LibraryPageState extends State<LibraryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Workouts'),
-      automaticallyImplyLeading: false,
-      leading: IconButton(
-        onPressed: (){
-          Navigator.of(context).pop();
-        },
-         icon: const Icon(Icons.arrow_back),
-        ),
-      ),
-      body: Column(
+
+      body: SingleChildScrollView(
+
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
 
         children:[
 
-          Icon(Icons.line_weight),
+          const Divider(        
+            color: Color.fromARGB(255, 24, 24, 24)
+          ),
           Container(
             height: 210,
             decoration: BoxDecoration(
@@ -37,13 +34,9 @@ class _LibraryPageState extends State<LibraryPage> {
           const Divider(        
             color: Color.fromARGB(255, 24, 24, 24)
           ),
-
-          Container(
-            color: Colors.white,
-            child: const Text ('This is'),
-          )
+  
         ],
-
+        ),
       )
     );
   }

@@ -54,9 +54,12 @@ class WorkoutTab extends StatelessWidget {
     return Column(
       children: [
 
-        Icon(Icons.line_weight),
+        const Divider(        
+          color: Color.fromARGB(255, 24, 24, 24)
+        ),        
+        
         Container(
-          height: 210,
+          height: 150,
 
           decoration: BoxDecoration(
           color: Color.fromARGB(255, 34, 34, 34),
@@ -93,11 +96,18 @@ class _WorkoutCalendarState extends State<WorkoutCalendar> {
     return Column(
       children: [
 
-        Text('123'),
         TableCalendar(
         focusedDay: today,
         firstDay: DateTime.utc(2020),
         lastDay: DateTime.utc(2040),
+
+        calendarStyle: const CalendarStyle(
+          defaultTextStyle: TextStyle(color: Colors.white)
+        ),
+
+        headerStyle: HeaderStyle(
+          titleTextStyle: TextStyle(color: Colors.white)
+        ),
 
         ),
       ],
