@@ -55,7 +55,7 @@ class _RootPageState extends State<RootPage> {
       break; 
 
       case 2:
-       // body = ProfilePage();
+       body = ProfilePage();
        pageHeader = 'Profile';
       break;
 
