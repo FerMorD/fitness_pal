@@ -1,3 +1,4 @@
+import 'package:fitness_pal/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Color(0xFF181818),
       ),
-      home: const HomePage(),
+      home: const RootPage(),
     );
   }
 }
@@ -24,14 +25,14 @@ class MyApp extends StatelessWidget {
 
 
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class RootPage extends StatefulWidget {
+  const RootPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<RootPage> createState() => _RootPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _RootPageState extends State<RootPage> {
   int currentPage = 0;
 
   @override
@@ -40,7 +41,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Fitness Pal'),
       ),
-
+      body: const HomePage(),
       bottomNavigationBar: NavigationBar(
         destinations: const[ 
         NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
