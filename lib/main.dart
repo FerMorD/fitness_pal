@@ -1,5 +1,7 @@
-import 'package:fitness_pal/home_page.dart';
 import 'package:flutter/material.dart';
+import 'home_page.dart';
+import 'library_page.dart';
+import 'profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,17 +39,40 @@ class _RootPageState extends State<RootPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    Widget body = HomePage();
+    switch(currentPage){
+
+      case 0:
+        body = HomePage();
+      break;
+
+      case 1:
+        body = LibraryPage();
+      break; 
+
+      case 2:
+       // body = ProfilePage();
+      break;
+
+      default:
+        body = HomePage();
+      break;
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Fitness Pal'),
       ),
-      body: const HomePage(),
+
+      body: body,
       bottomNavigationBar: NavigationBar(
         destinations: const[ 
         NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
         NavigationDestination(icon: Icon(Icons.book), label: 'Library'),
         NavigationDestination(icon: Icon(Icons.person), label: 'Profile'), 
       ],
+
       onDestinationSelected: (int index){
         setState(() {
         currentPage = index;          
