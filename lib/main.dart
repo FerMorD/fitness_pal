@@ -9,20 +9,51 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xFF181818),
+      ),
+      home: const HomePage(),
+    );
   }
 }
 
-class name extends StatefulWidget {
-  const name({super.key});
+
+
+
+
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<name> createState() => _nameState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _nameState extends State<name> {
+class _HomePageState extends State<HomePage> {
+  int currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Fitness Pal'),
+      ),
+
+      bottomNavigationBar: NavigationBar(
+        destinations: const[ 
+        NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+        NavigationDestination(icon: Icon(Icons.book), label: 'Library'),
+        NavigationDestination(icon: Icon(Icons.person), label: 'Profile'), 
+      ],
+      onDestinationSelected: (int index){
+        setState(() {
+        currentPage = index;          
+        });
+      },
+      selectedIndex: currentPage,
+      )
+    );
   }
 }
