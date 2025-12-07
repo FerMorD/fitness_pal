@@ -1,5 +1,6 @@
 import 'package:fitness_pal/workout_page.dart';
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

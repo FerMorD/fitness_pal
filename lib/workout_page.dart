@@ -21,9 +21,28 @@ class _WorkoutPageState extends State<WorkoutPage> {
         ),
       ),
       body: Column(
+
         children:[
-          Icon(Icons.line_weight)
+
+          Icon(Icons.line_weight),
+          Container(
+            height: 210,
+            decoration: BoxDecoration(
+            color: Color.fromARGB(255, 34, 34, 34),
+            borderRadius: BorderRadius.circular(20)
+            ),
+          ),
+
+          const Divider(        
+            color: Color.fromARGB(255, 24, 24, 24)
+          ),
+
+          Container(
+            color: Colors.white,
+            child: const Text ('This is'),
+          )
         ],
+
       )
     );
   }
