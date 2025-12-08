@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'workout_page.dart';
 
 
 class LibraryPage extends StatefulWidget {
@@ -18,22 +19,31 @@ class _LibraryPageState extends State<LibraryPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
 
-        children:[
+          children:[
+
 
           const Divider(        
             color: Color.fromARGB(255, 24, 24, 24)
           ),
-          Container(
-            height: 210,
-            decoration: BoxDecoration(
-            color: Color.fromARGB(255, 34, 34, 34),
-            borderRadius: BorderRadius.circular(20)
+
+          //Made the container inside of it interactable and leads to WorkoutPage
+
+          FloatingActionButton(onPressed: () {
+            Navigator.push(context,
+              MaterialPageRoute(
+                builder: (context){
+              return SetsWeightsReps();
+              },
             ),
+          );
+          },
           ),
+          
 
           const Divider(        
             color: Color.fromARGB(255, 24, 24, 24)
-          ),
+        
+          )
   
         ],
         ),

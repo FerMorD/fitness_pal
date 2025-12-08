@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
-import 'library_page.dart';
-import 'profile_page.dart';
+import 'pages/home_page.dart';
+import 'pages/library_page.dart';
+import 'pages/profile_page.dart';
+import 'pages/workout_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,6 +56,11 @@ class _RootPageState extends State<RootPage> {
       break; 
 
       case 2:
+        body = WorkoutPage();
+        pageHeader = 'Workout';
+      break;
+
+      case 3:
        body = ProfilePage();
        pageHeader = 'Profile';
       break;
@@ -75,7 +81,9 @@ class _RootPageState extends State<RootPage> {
         destinations: const[ 
         NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
         NavigationDestination(icon: Icon(Icons.book), label: 'Library'),
+        NavigationDestination(icon: Icon(Icons.fitness_center), label: 'Workouts'), 
         NavigationDestination(icon: Icon(Icons.person), label: 'Profile'), 
+
       ],
 
       onDestinationSelected: (int index){
