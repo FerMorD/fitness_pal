@@ -5,10 +5,26 @@ class WorkoutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SetsWeightsReps()
-      ]
+    return Scaffold(
+      body: SingleChildScrollView(
+
+        child: Column (
+          children: [
+
+            
+            Align(
+            alignment: Alignment.bottomRight,
+            child: SizedBox(
+              width: 70,
+              height: 70,
+              child: FloatingActionButton(onPressed: () {},
+                child: Icon(Icons.plus_one)
+              ),
+            ),
+          ),
+          ],
+        ),
+      )
     );
   }
 }
@@ -23,14 +39,15 @@ class SetsWeightsReps extends StatefulWidget {
 class _SetsWeightsRepsState extends State<SetsWeightsReps> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold(
 
-      
-      children: [
-        Padding(
-          padding: EdgeInsetsGeometry.only(top: 15)),
+      body: SingleChildScrollView(
+        child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 15)),
 
-        Row(
+          Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           
           children: [
@@ -38,7 +55,7 @@ class _SetsWeightsRepsState extends State<SetsWeightsReps> {
           Text('Sets',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 12,
+            fontSize: 20,
           )
           ),
 
@@ -46,20 +63,61 @@ class _SetsWeightsRepsState extends State<SetsWeightsReps> {
           Text('Weights',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 12,
+            fontSize: 20,
           )
           ),
 
           Text('Reps',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 12,
+            fontSize: 20,
           )
           )
           ],
         ),
+
+        //Row of Sets, weight, box
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+
+            //Sets Box
+            Container(
+              width: 50,
+              height: 40,
+              color: Colors.grey,
+              child: TextField(
+                style: TextStyle(color: Colors.white)
+              ),
+            ),
+
+            //Weights Box
+            Container(
+              width: 50,
+              height: 40,
+              color: Colors.grey,
+              child: TextField(
+                style: TextStyle(color: Colors.white)
+              ),
+            ),
+
+            //Reps Box
+            Container(
+              width: 50,
+              height: 40,
+              color: Colors.grey,
+              child: TextField(
+                style: TextStyle(color: Colors.white)
+              ),
+            ),
+
+            //Add new set button
+
+          ],
+        ),
       ],
+      )
+      ),
     );
   }
 }
-
