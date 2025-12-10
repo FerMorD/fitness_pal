@@ -38,6 +38,10 @@ dependencies:
   # Added this for the calendar on the Home-Page
   table_calendar: ^3.0.9
 
+  # For database
+  sqflite: ^2.2.8+1
+  path: ^1.9.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,6 +1,16 @@
 # fitness_pal
 
-A new Flutter project.
+Only files I have added/changed are pubspec.yaml, and everything in lib. The other files were created by the template for Flutter.
+
+Files:
+
+- main.dart                     //
+- home_page.dart                // Home-Page UI
+- library_page.dart             // Library-Page UI
+- profile_page.dart             // Profile-Page UI
+- workout_page.dart             // Workout-Page UI
+- library_workouts.dart         // Where the workouts created are stored
+- workout_database.dart         // Where specific excercises are
 
 ## Getting Started
 
