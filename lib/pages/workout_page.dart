@@ -10,9 +10,27 @@ class WorkoutPage extends StatelessWidget {
 
         child: Column (
           children: [
+            SetsWeightsReps(),
+            AddSetButton()
+          ],
+        ),
+      )
+    );
+  }
+}
 
-            
-            Align(
+
+class AddSetButton extends StatefulWidget {
+  const AddSetButton({super.key});
+
+  @override
+  State<AddSetButton> createState() => _AddSetButtonState();
+}
+
+class _AddSetButtonState extends State<AddSetButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Align(
             alignment: Alignment.bottomRight,
             child: SizedBox(
               width: 70,
@@ -21,11 +39,8 @@ class WorkoutPage extends StatelessWidget {
                 child: Icon(Icons.plus_one)
               ),
             ),
-          ),
-          ],
-        ),
-      )
-    );
+          );
+
   }
 }
 
@@ -39,10 +54,8 @@ class SetsWeightsReps extends StatefulWidget {
 class _SetsWeightsRepsState extends State<SetsWeightsReps> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Column(
 
-      body: SingleChildScrollView(
-        child: Column(
         children: [
           Padding(
             padding: EdgeInsets.only(top: 15)),
@@ -116,8 +129,7 @@ class _SetsWeightsRepsState extends State<SetsWeightsReps> {
           ],
         ),
       ],
-      )
-      ),
-    );
+      );
+
   }
 }

@@ -11,6 +11,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
       return SingleChildScrollView(
         child: Column(
+
+          //Fills screen horizontally and order the objects are placed
+
           crossAxisAlignment: CrossAxisAlignment.stretch,
 
           children: [
